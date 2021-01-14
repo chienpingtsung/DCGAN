@@ -49,6 +49,7 @@ class Discriminator(nn.Module):
         self.main = nn.Sequential(
             # (N, 3, 512, 512)
             nn.Conv2d(3, 16, 4, 2, 1, bias=False),
+            nn.BatchNorm2d(16),
             nn.LeakyReLU(0.2, inplace=True),
             # (N, 16, 256, 256)
             nn.Conv2d(16, 32, 4, 2, 1, bias=False),
